@@ -1,4 +1,4 @@
-# LINE_NEKOSUKEBOT
+# LINE_nekosukebot
 
 （日本語）
 HerokuでこのScript(NekosukeController.py)を動かす方法をわかる方はぜひ教えてください。
