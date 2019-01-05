@@ -1,6 +1,7 @@
-# nekosukeBot
+#LINE_nekosukeBot
 
 （日本語）
-HerokuでこのScriptを動かす方法をわかる方はぜひお願いします。
+HerokuでこのScript(NekoskeConreoller.py)を動かす方法をわかる方はぜひお願いします。
 メール：samplenekosuke001@gmail.com
-# LINE_NEKOSUKEBOT
+
+##using
