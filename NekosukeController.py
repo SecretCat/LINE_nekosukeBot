@@ -2,15 +2,14 @@
 from nekoLib.linepy import *
 import time
 from random import choice
-nk_01=LINE("EAZlQrmzI5BFdjQwtsyb.TY1aqoynUFLD7kaCQdrgYW.Q1YuFjWpG8CtZuPdS7EL2OpXno2VdM25ovLG6HhXw5w=")
-nk_02=LINE("EAVN33ZgLAcH9QCVGUk1.8RTMfj4dURGAbXXvXo8fyq.eYVVKc7qz2fv0Ju25xDfXS4V5pZbGA0rX2+gd3VMMNU=")
-nk_03=LINE("EA9exiDfQlokig9yAoZ6.9zipI7oJeLytsrF5RlHATG.ZGlSJPpt/1/J0Nkjb6iQ0QvsA7l8XiaV9gU+9RIJrkM=")
-nk_04=LINE("EAWDL6KZcp7Cu7Om7ji7.nkhCcapFWhSsTBqy9h/BzW.0l7TWKULSIzLpAHLLKk/k08UxTbW8ftzU+UeWkavxu0=")
-nk_05=LINE("EAS4lKI7ZlZc6eGC27v0.A1h7+zOxzvQvRJNeX9HVCa.ETWEngeg4rrVNVFoZjyriPUHUERdPiFQo8UeGJj3lfQ=")
-nk_06=LINE("EA1UlnOUO7m2Vj1QYH8c.yYAurc4LReXSlX+4BAueha.lj1i7BHeXeJWIN7FzS4+khAR4gIwckf9WwgDBcyYB/E=")
-nk_07=LINE("EAk54eMvFWBFYHiXtaR0.UFV9+BogQx5C6POG197e8a.HITfYYP4qrL9tKE4IBygoJ3SnUCXVRlnowtaITy4ryQ=")
-nk_08=LINE("EAa705wUL7WUh9XwY0t5.DSPjpuhZ3sST/NA3WsOW1q.lt9zU47QRGswC2kuOmeLzjYNSh555ZcgEDkfyNwzl4w=")
-
+nk_01=LINE("EAFKKzW3ybkRGVZLerSb.TY1aqoynUFLD7kaCQdrgYW.9+PicvXXwvKsekpvgq3dd2lYDGsM6t/HQ40WT4uaRsw=")
+nk_02=LINE("EA4IgQHRlbUoRz9Fgh51.8RTMfj4dURGAbXXvXo8fyq.7+Casgfo49E67UywStZnWBmR2mgHzMznJjebyPnnEBQ=")
+nk_03=LINE("EASyezGo1V6sN5MWdB26.9zipI7oJeLytsrF5RlHATG.1YfNTbf3A2g1DpIK5IvTA5rIhhcZQcIEgHiKMohWknI=")
+nk_04=LINE("EAAb9ZRIOht3xZBNJuO7.nkhCcapFWhSsTBqy9h/BzW.n/WQYMiMqNlU+ItfQ08k8jqmVvIgX6BkhXev4CXiR40=")
+nk_05=LINE("EAPZsjDv3I7tuvOgUXv0.A1h7+zOxzvQvRJNeX9HVCa.w/zoVz5FETmmvJT8bcqBMRNlMbuI1eBL3btrZbFNI6Q=")
+nk_06=LINE("EATlX16OmeIOOP6V8ehc.yYAurc4LReXSlX+4BAueha.dBM4GREe+I9nPDQqCndFw7KqSVie2P9FyG3QNBgl+3I=")
+nk_07=LINE("EAC4t9V4gFR5lgpDTtD0.UFV9+BogQx5C6POG197e8a.Oa3+eZZEmggVFGquGlBF6wY+LXEprEXtZygxTvedPD0=")
+nk_08=LINE("EAIsmFIW5Oyi2ZUzFb95.DSPjpuhZ3sST/NA3WsOW1q.mlxtQFBvKN3IbLUN5/oqQOgPcctolC4py6BPxYMvowE=")
 nk_01.log("Auth Token : " + str(nk_01.authToken))
 nk_02.log("Auth Token : " + str(nk_02.authToken))
 nk_03.log("Auth Token : " + str(nk_03.authToken))
@@ -68,12 +67,6 @@ while True:
                         print(op.param1)
                         print(op.param2)
 
-                        """
-                        if op.param2==mid_02:
-                            print("SUCCESS")
-                            nk_01.inviteIntoGroup(op.param1,[mid_02])
-                            print("SUCCESS")
-                        """
 
                     if op.type==16:
 
@@ -112,9 +105,6 @@ while True:
                             lv_list[0].kickoutFromGroup(op.param1,[kicker])
                             lv_list.clear()
 
-
-
-
                     if op.type==25:
                         print(str(op.param1))
                         print(str(op.param2))
@@ -124,12 +114,109 @@ while True:
                         _id=msg.id
                         cmd=msg.text
 
-                        if cmd in ["index"]:
-                            pass
 
                         if cmd in ["test"]:
                             nk_01.sendMessage(to,"Hello")
 
+                        if cmd in ["help"]:
+                            allcmd="┏━━━━━━━━━━━━━━━━━━━\n┣creator━作者名表示\n┣nk:allin━nekosuke002~006参加\n┣nk:allout━nekosuke002~006退会\n┣leave:masternekosuke━nekosuke001退会\n┣nk:makeURL━グループURL作成\n┣nk:getGroup━グループの情報を取得\n┣nk:allmember━グループのメンバー全員の名前とID表示\n┗━━━━━━━━━━━━━━━━━━━"
+                            nk_01.sendMessage(to,"コマンド一覧\n"+allcmd+"\n\n====================\n\n☆☆☆☆☆☆☆create by hiroaki☆☆☆☆☆☆☆\n\n====================")
+                        elif cmd in ["nk:allin"]:
+                                print("True")
+                                G=nk_01.getGroup(to)
+                                G.preventedJoinByTicket=False
+                                nk_01.updateGroup(G)
+                                T=nk_01.reissueGroupTicket(to)
+                                nk_02.acceptGroupInvitationByTicket(to,T)
+                                nk_03.acceptGroupInvitationByTicket(to,T)
+                                nk_04.acceptGroupInvitationByTicket(to,T)
+                                nk_05.acceptGroupInvitationByTicket(to,T)
+                                nk_06.acceptGroupInvitationByTicket(to,T)
+                                nk_07.acceptGroupInvitationByTicket(to,T)
+                                nk_08.acceptGroupInvitationByTicket(to,T)
+
+
+
+
+                        elif cmd in ["nk:allout"]:
+
+                            nk_02.leaveGroup(to)
+                            nk_03.leaveGroup(to)
+                            nk_04.leaveGroup(to)
+                            nk_05.leaveGroup(to)
+                            nk_06.leaveGroup(to)
+                            nk_07.leaveGroup(to)
+                            nk_08.leaveGroup(to)
+
+                        elif cmd in ["leave:masternekosuke"]:
+                            nk_01.leaveGroup(to)
+
+                        elif cmd in ["nk:makeURL"]:
+                                G=nk_04.getGroup(to)
+                                G.preventedJoinByTicket==False
+                                nk_04.updateGroup(G)
+                                T=nk_04.reissueGroupTicket(to)
+                                nk_04.sendMessage(to,"https://line.me/ti/g/"+str(T))
+
+
+                        elif cmd in ["blacklist"]:
+                            print(B_list)
+                            print(B_listName)
+                            m = len(B_list)
+                            print(m)
+                            tx="BLACK LIST\n"
+                            print(tx)
+                            for k in range(m):
+                                tx = tx + B_listName[k] +"\t\t\t"+str(B_list[k])+"\n"
+                            nk_01.sendMessage(to,tx)
+
+
+                        elif cmd in ["nk:getGroup"]:
+                            if fr in user_list:
+                                G=nk_02.getGroup(to)
+                                if G.id in G_list:
+
+                                    n=G_list.index(G.id)
+
+                                    nk_02.sendMessage(to,"グループ名:"+G_listName[n]+"\nGroupID:"+G_list[n])
+
+                                else:
+                                    G_list.append(G.id)
+                                    G_listName.append(G.name)
+
+                                    n=G_list.index(G.id)
+
+                                    nk_02.sendMessage(to,"グループ名:"+G_listName[n]+"\nGroupID:"+G_list[n])
+
+                        elif cmd in ["nk:allmember"]:
+
+                            G=nk_02.getGroup(to)
+                            memid=[i.mid for i in G.members]
+                            names=[i.displayName for i in G.members]
+                            m=len(memid)
+                            print("n")
+                            Roster = "メンバー一覧\n"#名簿
+                            print("n")
+                            for j in range(m):
+                                Roster = Roster + names[j] + "\n" + "\t" + "\t"+ "\t"+ "\t"+ "\t"+ "ID : " + str(memid[j]) + "\n"
+
+                            nk_02.sendMessage(to,Roster)
+                                #for j in range(m):
+                                    #nk_02.sendMessage(to,name[j]+"\nID : "+str(memid[j]))
+                        elif cmd in ["nk:allgroup"]:
+                            for i in range(len(G_list)):
+                                nk_02.sendMessage(to,G_listName[i])
+
+                        elif cmd in ["nk:sp"]:
+                            st=[]
+                            en=[]
+                            m=len(nks)
+                            for i in range(m):
+                                nks[i].sendMessage(to,".")
+                                st.append(time.time())
+                            for j in range(m):
+                                en.append(time.time())
+                                nks[j].sendMessage(to,"速度は\n%ssec"%(en[j]-st[j]))
                     if op.type==26:
                         msg=op.message
                         if msg.contentType==0:
@@ -138,11 +225,7 @@ while True:
                             _id=msg.id
                             cmd=msg.text
 
-                            if cmd in ["help"]:
-                                if fr in user_list:
-                                    allcmd="┏━━━━━━━━━━━━━━━━━━━\n┣creator━作者名表示\n┣nk:allin━nekosuke002~006参加\n┣nk:allout━nekosuke002~006退会\n┣leave:masternekosuke━nekosuke001退会\n┣nk:makeURL━グループURL作成\n┣nk:getGroup━グループの情報を取得\n┣nk:allmember━グループのメンバー全員の名前とID表示\n┗━━━━━━━━━━━━━━━━━━━"
-                                    nk_01.sendMessage(to,"コマンド一覧\n"+allcmd+"\n\n====================\n\n☆☆☆☆☆☆☆create by hiroaki☆☆☆☆☆☆☆\n\n====================")
-                            elif cmd in ["creator"]:
+                            if cmd in ["creator"]:
                                 nk_01.sendMessage(to,"->create by ひろあき <-")
                                 nk_02.sendMessage(to,"->create by ひろあき <-")
                                 nk_03.sendMessage(to,"->create by ひろあき <-")
@@ -152,102 +235,7 @@ while True:
                                 nk_07.sendMessage(to,"->create by ひろあき <-")
                                 nk_08.sendMessage(to,"->create by ひろあき <-")
 
-                            elif cmd in ["nk:allin"]:
-                                if fr in user_list:
-                                    print("True")
-                                    G=nk_01.getGroup(to)
-                                    G.preventedJoinByTicket=False
-                                    nk_01.updateGroup(G)
-                                    T=nk_01.reissueGroupTicket(to)
-                                    nk_02.acceptGroupInvitationByTicket(to,T)
-                                    nk_03.acceptGroupInvitationByTicket(to,T)
-                                    nk_04.acceptGroupInvitationByTicket(to,T)
-                                    nk_05.acceptGroupInvitationByTicket(to,T)
-                                    nk_06.acceptGroupInvitationByTicket(to,T)
-                                    nk_07.acceptGroupInvitationByTicket(to,T)
-                                    nk_08.acceptGroupInvitationByTicket(to,T)
 
-
-                            elif cmd in ["nk:allout"]:
-                                if fr in user_list:
-                                    nk_02.leaveGroup(to)
-                                    nk_03.leaveGroup(to)
-                                    nk_04.leaveGroup(to)
-                                    nk_05.leaveGroup(to)
-                                    nk_06.leaveGroup(to)
-                                    nk_07.leaveGroup(to)
-                                    nk_08.leaveGroup(to)
-
-                            elif cmd in ["leave:masternekosuke"]:
-                                if fr in user_list:
-                                    nk_01.leaveGroup(to)
-
-                            elif cmd in ["nk:makeURL"]:
-                                if fr in user_list:
-                                    G=nk_04.getGroup(to)
-                                    G.preventedJoinByTicket==False
-                                    nk_04.updateGroup(G)
-                                    T=nk_04.reissueGroupTicket(to)
-                                    nk_04.sendMessage(to,"https://line.me/ti/g/"+str(T))
-
-                            elif cmd in ["blacklist"]:
-                                print(B_list)
-                                print(B_listName)
-                                m = len(B_list)
-                                print(m)
-                                tx="BLACK LIST\n"
-                                print(tx)
-                                for k in range(m):
-                                    tx = tx + B_listName[k] +"\t\t\t"+str(B_list[k])+"\n"
-                                nk_01.sendMessage(to,tx)
-
-
-                            elif cmd in ["nk:getGroup"]:
-                                if fr in user_list:
-                                    G=nk_02.getGroup(to)
-                                    if G.id in G_list:
-
-                                        n=G_list.index(G.id)
-
-                                        nk_02.sendMessage(to,"グループ名:"+G_listName[n]+"\nGroupID:"+G_list[n])
-
-                                    else:
-                                        G_list.append(G.id)
-                                        G_listName.append(G.name)
-
-                                        n=G_list.index(G.id)
-
-                                        nk_02.sendMessage(to,"グループ名:"+G_listName[n]+"\nGroupID:"+G_list[n])
-
-                            elif cmd in ["nk:allmember"]:
-                                if fr in user_list:
-                                    G=nk_02.getGroup(to)
-                                    memid=[i.mid for i in G.members]
-                                    names=[i.displayName for i in G.members]
-                                    m=len(memid)
-                                    print("n")
-                                    Roster = "メンバー一覧\n"#名簿
-                                    print("n")
-                                    for j in range(m):
-                                        Roster = Roster + names[j] + "\n" + "\t" + "\t"+ "\t"+ "\t"+ "\t"+ "ID : " + str(memid[j]) + "\n"
-
-                                    nk_02.sendMessage(to,Roster)
-                                    #for j in range(m):
-                                        #nk_02.sendMessage(to,name[j]+"\nID : "+str(memid[j]))
-                            elif cmd in ["nk:allgroup"]:
-                                for i in range(len(G_list)):
-                                    nk_02.sendMessage(to,G_listName[i])
-
-                            elif cmd in ["nk:sp"]:
-                                st=[]
-                                en=[]
-                                m=len(nks)
-                                for i in range(m):
-                                    nks[i].sendMessage(to,".")
-                                    st.append(time.time())
-                                for j in range(m):
-                                    en.append(time.time())
-                                    nks[j].sendMessage(to,"速度は\n%ssec"%(en[j]-st[j]))
 
 
 
@@ -266,3 +254,108 @@ while True:
 
                     #except (ZeroDivisionError, IOError):
                         #print("ERROR!!")
+
+                    '''    if cmd in ["test"]:
+                            nk_01.sendMessage(to,"Hello")
+
+                        if cmd in ["help"]:
+                            if fr in user_list:
+                                allcmd="┏━━━━━━━━━━━━━━━━━━━\n┣creator━作者名表示\n┣nk:allin━nekosuke002~006参加\n┣nk:allout━nekosuke002~006退会\n┣leave:masternekosuke━nekosuke001退会\n┣nk:makeURL━グループURL作成\n┣nk:getGroup━グループの情報を取得\n┣nk:allmember━グループのメンバー全員の名前とID表示\n┗━━━━━━━━━━━━━━━━━━━"
+                                nk_01.sendMessage(to,"コマンド一覧\n"+allcmd+"\n\n====================\n\n☆☆☆☆☆☆☆create by hiroaki☆☆☆☆☆☆☆\n\n====================")
+                        elif cmd in ["nk:allin"]:
+                            if fr in user_list:
+                                print("True")
+                                G=nk_01.getGroup(to)
+                                G.preventedJoinByTicket=False
+                                nk_01.updateGroup(G)
+                                T=nk_01.reissueGroupTicket(to)
+                                nk_02.acceptGroupInvitationByTicket(to,T)
+                                nk_03.acceptGroupInvitationByTicket(to,T)
+                                nk_04.acceptGroupInvitationByTicket(to,T)
+                                nk_05.acceptGroupInvitationByTicket(to,T)
+                                nk_06.acceptGroupInvitationByTicket(to,T)
+                                nk_07.acceptGroupInvitationByTicket(to,T)
+                                nk_08.acceptGroupInvitationByTicket(to,T)
+
+
+                        elif cmd in ["nk:allout"]:
+                            if fr in user_list:
+                                nk_02.leaveGroup(to)
+                                nk_03.leaveGroup(to)
+                                nk_04.leaveGroup(to)
+                                nk_05.leaveGroup(to)
+                                nk_06.leaveGroup(to)
+                                nk_07.leaveGroup(to)
+                                nk_08.leaveGroup(to)
+
+                        elif cmd in ["leave:masternekosuke"]:
+                            if fr in user_list:
+                                nk_01.leaveGroup(to)
+
+                        elif cmd in ["nk:makeURL"]:
+                            if fr in user_list:
+                                G=nk_04.getGroup(to)
+                                G.preventedJoinByTicket==False
+                                nk_04.updateGroup(G)
+                                T=nk_04.reissueGroupTicket(to)
+                                nk_04.sendMessage(to,"https://line.me/ti/g/"+str(T))
+
+                        elif cmd in ["blacklist"]:
+                            print(B_list)
+                            print(B_listName)
+                            m = len(B_list)
+                            print(m)
+                            tx="BLACK LIST\n"
+                            print(tx)
+                            for k in range(m):
+                                tx = tx + B_listName[k] +"\t\t\t"+str(B_list[k])+"\n"
+                            nk_01.sendMessage(to,tx)
+
+
+                        elif cmd in ["nk:getGroup"]:
+                            if fr in user_list:
+                                G=nk_02.getGroup(to)
+                                if G.id in G_list:
+
+                                    n=G_list.index(G.id)
+
+                                    nk_02.sendMessage(to,"グループ名:"+G_listName[n]+"\nGroupID:"+G_list[n])
+
+                                else:
+                                    G_list.append(G.id)
+                                    G_listName.append(G.name)
+
+                                    n=G_list.index(G.id)
+
+                                    nk_02.sendMessage(to,"グループ名:"+G_listName[n]+"\nGroupID:"+G_list[n])
+
+                        elif cmd in ["nk:allmember"]:
+                            if fr in user_list:
+                                G=nk_02.getGroup(to)
+                                memid=[i.mid for i in G.members]
+                                names=[i.displayName for i in G.members]
+                                m=len(memid)
+                                print("n")
+                                Roster = "メンバー一覧\n"#名簿
+                                print("n")
+                                for j in range(m):
+                                    Roster = Roster + names[j] + "\n" + "\t" + "\t"+ "\t"+ "\t"+ "\t"+ "ID : " + str(memid[j]) + "\n"
+
+                                nk_02.sendMessage(to,Roster)
+                                #for j in range(m):
+                                    #nk_02.sendMessage(to,name[j]+"\nID : "+str(memid[j]))
+                        elif cmd in ["nk:allgroup"]:
+                            for i in range(len(G_list)):
+                                nk_02.sendMessage(to,G_listName[i])
+
+                        elif cmd in ["nk:sp"]:
+                            st=[]
+                            en=[]
+                            m=len(nks)
+                            for i in range(m):
+                                nks[i].sendMessage(to,".")
+                                st.append(time.time())
+                            for j in range(m):
+                                en.append(time.time())
+                                nks[j].sendMessage(to,"速度は\n%ssec"%(en[j]-st[j]))
+                                '''
