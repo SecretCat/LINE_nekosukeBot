@@ -8,17 +8,17 @@ def loggedIn(func):
         else:
             args[0].callback.other('You want to call the function, you must login to LINE')
     return checkLogin
-    
+
 class Call(object):
     isLogin = False
 
     def __init__(self):
         self.isLogin = True
-        
+
     @loggedIn
     def acquireCallRoute(self, to):
         return self.call.acquireCallRoute(to)
-        
+
     @loggedIn
     def acquireGroupCallRoute(self, groupId, mediaType=MediaType.AUDIO):
         return self.call.acquireGroupCallRoute(groupId, mediaType)
@@ -26,7 +26,7 @@ class Call(object):
     @loggedIn
     def getGroupCall(self, ChatMid):
         return self.call.getGroupCall(ChatMid)
-        
+
     @loggedIn
     def inviteIntoGroupCall(self, chatId, contactIds=[], mediaType=MediaType.AUDIO):
         return self.call.inviteIntoGroupCall(chatId, contactIds, mediaType)
