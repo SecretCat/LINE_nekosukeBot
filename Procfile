@@ -1,1 +1,1 @@
-web: python3 NekosukeConreoller.py
+web: python3 NekosukeController.py
