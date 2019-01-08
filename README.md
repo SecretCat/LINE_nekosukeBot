@@ -15,4 +15,4 @@ nekosukeの友達追加は下記のQRコードよりできます。
 
 IBMでnekosukecontroller.pyを動かす方法をわかる方はぜひ教えてください。
 
-お願いします。 m(_ _)m
+お願いします。 m(_ _)m　ﾍﾟｺﾘ
