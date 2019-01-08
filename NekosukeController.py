@@ -39,9 +39,9 @@ nkids=[mid_01,mid_02,mid_03,mid_04,mid_05,mid_06,mid_07,mid_08]
 
 B_list=[]
 B_listName=[]
-G_list=['ceb7c7b0a70448e2ee11ba8fc79ebd23e', 'cd6553fd0f58641d883934dfeee58efe0', 'c9fd315c4cc333cdd66943d4c568d506e', 'ceca69d0d1b0303047913a241cc0c9365', 'ca72e9807147f1c827471306ca74ee223']
-G_listName=['npcaの部分集合42468759872501368450', 'sample', 'sample(2)', 'NPCA76回生','sample(3)']
-user_list=['u2b9cfdb21068feeb5be01b9b41e29243','u6b51fbfd9a17655a95ae39c4c7d86f70','uf2bb66149e03bab81a071c55c4ef0561','u34a1dc0803dfc07b12b5b418f47f9b67','ub72d4040e60db9f95deca01ca83446c']
+G_list=[]
+G_listName=[]
+G_members=[]
 
 
 
@@ -69,22 +69,31 @@ while True:
 
 
                     if op.type==16:
-
                         G=nk_01.getGroup(op.param1)
                         G_list.append(G.id)
                         G_listName.append(G.name)
+                        memid=[i.mid for i in G.members]
+                        memid.remove(mid_01,mid_02,mid_03,mid_04,mid_05,mid_06,mid_07,mid_08)
+                        G_members.append(memid)
                         print(G_list,G_listName)
 
                     if op.type==17:
+                        G=nk_01.getGroup(op.param1)
+                        n=G_list.index(G.id)
                         if op.param2 in B_list:
                             try:
                                 nks[1].kickoutFromGroup(op.param1,[op.param2])
                                 nks[1].sendMessage(op.param1,"blacklistuserを退会させました")
                             except:
                                 continue
-                        elif op.param2 in nkids:
+                        elif op.param2 in G_members[n]:
                             ct=nk_01.getContact(op.param2)
-                            nk_01.sendMessage(op.param1,"Hello!   " + ct.displayName)
+                            G=nk_01.getGroup(op.param1)
+                            nk_01.sendMessage(op.param1,ct.displayName+"さん\nようこそ"+G.name+"へ")
+
+                        else:
+                            nk_01.sendMessage(op.param1,"メンバー登録をしてください")
+                            nks[1].kickoutFromGroup(op.param1,[op.param2])
 
                     if op.type==19:
                         if op.param2 in B_list:
